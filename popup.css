@@ -1,0 +1,123 @@
+:root {
+  --light_grey: #d3d6da;
+  --dark_grey: #69696a;
+  --tile_border: #878a8c;
+  --text: black;
+  --background: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --light_grey: #3a3a3c;
+    --dark_grey: #69696a;
+    --tile_border: #565758;
+    --text: white;
+    --background: #121213;
+  }
+}
+
+header {
+  display: flex;
+  width: 400px;
+}
+
+body {
+  width: 400px;
+  font-size: 16px;
+  font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  background-color: var(--background)
+}
+
+.title_row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid var(--light_grey);
+}
+
+#guesses {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 2px 2px 2px 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.column_title_row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.column_title {
+  text-align: center;
+  color: var(--text)
+}
+
+.title {
+  font-family: Roboto Slab, serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--text);
+  margin: 0;
+}
+
+.guess {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  width: 80%;
+}
+
+.tile {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: bold;
+  border: 2px solid var(--light_grey);
+  color: var(--dark_grey);
+  width: 55px;
+  height: 55px;
+  margin: 2px;
+}
+
+.score {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  line-height: 2rem;
+  width: 45px;
+  height: 45px;
+  padding: 2px 0;
+  margin: 0 20px;
+  color: var(--dark_grey);
+}
+
+.row:hover .guess .tile,
+.row:hover .score, .row {
+  cursor: pointer;
+  border-color: var(--tile_border);
+  color: var(--text)
+}
