@@ -12,3 +12,4 @@
 <h3 align="center"> <a href="https://github.com/AnonymousAAArdvark/wordle_solver/archive/refs/heads/main.zip">Clone the repo</a>  and load it as an unpacked extension for either <a href="https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension">Firefox</a> or <a href="https://developer.chrome.com/docs/extensions/mv3/getstarted/">Chromium</a> based browsers</h3>
 <h2 align="center">Usage</h2>
 
+https://user-images.githubusercontent.com
