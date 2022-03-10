@@ -1,11 +1,8 @@
-let guess
-
 async function updateGuesses() {
   let [tab] = await chrome.tabs.query({ active: true, currentWindow: true })
   const guesses_elem = document.getElementById("guesses")
   if (tab.url === "https://www.nytimes.com/games/wordle/index.html") {
     await chrome.tabs.sendMessage(tab.id, {}, (resp) => {
-      guess = resp
       guesses_elem.innerHTML = ""
       if (resp.length === 0) {
         const msg_elem = document.createElement("p")
@@ -57,10 +54,8 @@ async function injectTheScript() {
       target: {tabId: tabs[0].id},
       files: ["util/sim_input.js"],
     }, _ => {
-      chrome.tabs.sendMessage(tabs[0].id, {
-        guess: this.id
-      })
+      chrome.tabs.sendMessage(tabs[0].id, { guess: this.id })
+      updateGuesses()
     })
   })
-  await updateGuesses()
 }
